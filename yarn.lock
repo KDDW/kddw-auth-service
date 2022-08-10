@@ -742,10 +742,10 @@
     jsonc-parser "3.0.0"
     pluralize "8.0.0"
 
-"@nestjs/testing@^8.0.0":
-  version "8.4.7"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.4.7.tgz#fe4f356c0e081e25fe8c899a65e91dd88947fd13"
-  integrity sha512-aedpeJFicTBeiTCvJWUG45WMMS53f5eu8t2fXsfjsU1t+WdDJqYcZyrlCzA4dL1B7MfbqaTURdvuVVHTmJO8ag==
+"@nestjs/testing@^9.0.8":
+  version "9.0.8"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.0.8.tgz#94c346cf39a9beaed084debff2960d09ce7818e1"
+  integrity sha512-7mFQwhA+wE4gqYoZnW7+BM7ELM4FMZPQMfDSiHYaBSLkH8w6Ddn1+D7w1gXebgz0SkT1/EUJv/sJpFD9Vsgfvg==
   dependencies:
     tslib "2.4.0"
 
@@ -2647,6 +2647,11 @@ human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+husky@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
+  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"

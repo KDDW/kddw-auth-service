@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import axios, { AxiosInstance } from 'axios';
-import { GetTokenFromCodeResponse } from 'src/dtos/getTokenFromCode.response';
+import { GetTokenFromCodeResponse } from '../dtos/getTokenFromCode.response';
 import { GetTokenFromCodeUseCase } from './useCases/getTokenFromCode.useCase';
 
 @Injectable()

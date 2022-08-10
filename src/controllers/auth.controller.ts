@@ -8,10 +8,10 @@ import {
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import axios, { AxiosInstance } from 'axios';
-import { GetTokenFromCodeResponse } from 'src/dtos/getTokenFromCode.response';
-import { LoginResponse } from 'src/dtos/login.response';
-import { GetTokenFromCodeService } from 'src/services/getTokenFromCode.service';
-import { LoginService } from 'src/services/login.service';
+import { GetTokenFromCodeResponse } from '../dtos/getTokenFromCode.response';
+import { LoginResponse } from '../dtos/login.response';
+import { GetTokenFromCodeService } from '../services/getTokenFromCode.service';
+import { LoginService } from '../services/login.service';
 
 @Controller('authorize')
 export class AuthController {
