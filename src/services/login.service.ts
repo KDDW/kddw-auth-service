@@ -10,7 +10,6 @@ export class LoginService implements LoginUseCase {
   login(): LoginResponse {
     const baseUrl = this.configService.get('GITHUB_BASE_URL');
     const clientId = this.configService.get('GITHUB_CLIENT_ID');
-    console.log('rodeeei');
     return { url: `${baseUrl}/login/oauth/authorize?client_id=${clientId}` };
   }
 }
