@@ -28,7 +28,7 @@ docker compose up
 - Run the migrations
 
 ```bash
-yarn run migrations
+yarn run migrate
 ```
 
 - Start the project
