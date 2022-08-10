@@ -7,8 +7,6 @@ import { LoginService } from '../services/login.service';
 
 describe('AuthController', () => {
   let controller: AuthController;
-  let loginService: LoginService;
-  let getTokenFromCodeService: GetTokenFromCodeService;
   let configService: ConfigService;
 
   beforeEach(async () => {
@@ -18,11 +16,7 @@ describe('AuthController', () => {
       providers: [LoginService, GetTokenFromCodeService],
     }).compile();
 
-    loginService = moduleRef.get<LoginService>(LoginService);
     configService = moduleRef.get<ConfigService>(ConfigService);
-    getTokenFromCodeService = moduleRef.get<GetTokenFromCodeService>(
-      GetTokenFromCodeService,
-    );
     controller = moduleRef.get<AuthController>(AuthController);
   });
 
