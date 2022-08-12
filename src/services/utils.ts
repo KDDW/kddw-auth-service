@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { WhiteList } from '@prisma/client';
 import { AxiosInstance } from 'axios';
-import { GithubUserData } from 'src/dtos/githubUserData';
-import { WhiteListStatus } from 'src/utils/whiteList.utils';
+import { GithubUserData } from '../dtos/githubUserData';
+import { WhiteListStatus } from '../utils/whiteList.utils';
 
 export const getTokenFromTokenString = (tokenString: string): string => {
   const query = tokenString.split('=')[1];

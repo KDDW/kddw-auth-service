@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import axios, { AxiosInstance } from 'axios';
-import { FindEmailOnWhiteList } from 'src/repositories/findEmailOnWhiteList';
-import { FindOneUserPrisma } from 'src/repositories/findOneUser';
+import { FindEmailOnWhiteList } from '../repositories/findEmailOnWhiteList';
+import { FindOneUserPrisma } from '../repositories/findOneUser';
 import { GetTokenFromCodeResponse } from '../dtos/getTokenFromCode.response';
 import { GetTokenFromCodeUseCase } from './useCases/getTokenFromCode.useCase';
 import {
