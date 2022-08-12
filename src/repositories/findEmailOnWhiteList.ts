@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma, WhiteList } from '@prisma/client';
-import { PrismaService } from '../services/database/prisma.service';
-import { FindEmailOnWhiteListUseCase } from './useCases/findEmailOnWhiteList.useCase';
+import { PrismaService } from '../database/prisma.service';
 
 @Injectable()
-export class FindEmailOnWhiteList implements FindEmailOnWhiteListUseCase {
+export class FindEmailOnWhiteList {
   constructor(private readonly prismaService: PrismaService) {}
 
   async findEmailOnWhiteList(

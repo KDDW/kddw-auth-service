@@ -6,7 +6,13 @@ import { LoginResponse } from '../dtos/login.response';
 import { GetTokenFromCodeService } from '../services/getTokenFromCode.service';
 import { LoginService } from '../services/login.service';
 import { FindOneUserPrisma } from '../repositories/findOneUser';
-import { PrismaService } from '../services/database/prisma.service';
+import { PrismaService } from '../database/prisma.service';
+import { InsertOnWhiteListRepository } from 'repositories/insertInWhiteList';
+import { InsertOnWhiteListService } from 'services/insertInWhiteList.service';
+import { RemoveFromWhiteListRepository } from 'repositories/removeFromWhiteList';
+import { RemoveFromWhiteListService } from 'services/removeFromWhiteList.service';
+import { ListWhiteListRepository } from 'repositories/listWhiteList';
+import { ListWhiteListService } from 'services/listWhiteList.service';
 
 describe('AuthController', () => {
   let controller: AuthController;
@@ -18,10 +24,16 @@ describe('AuthController', () => {
       controllers: [AuthController],
       providers: [
         PrismaService,
-        LoginService,
         GetTokenFromCodeService,
-        FindEmailOnWhiteList,
+        LoginService,
         FindOneUserPrisma,
+        FindEmailOnWhiteList,
+        InsertOnWhiteListRepository,
+        InsertOnWhiteListService,
+        RemoveFromWhiteListRepository,
+        RemoveFromWhiteListService,
+        ListWhiteListRepository,
+        ListWhiteListService,
       ],
     }).compile();
 

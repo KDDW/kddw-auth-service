@@ -4,7 +4,6 @@ import axios, { AxiosInstance } from 'axios';
 import { FindEmailOnWhiteList } from '../repositories/findEmailOnWhiteList';
 import { FindOneUserPrisma } from '../repositories/findOneUser';
 import { GetTokenFromCodeResponse } from '../dtos/getTokenFromCode.response';
-import { GetTokenFromCodeUseCase } from './useCases/getTokenFromCode.useCase';
 import {
   getTokenFromTokenString,
   getUserDataFromToken,
@@ -12,7 +11,7 @@ import {
 } from './utils';
 
 @Injectable()
-export class GetTokenFromCodeService implements GetTokenFromCodeUseCase {
+export class GetTokenFromCodeService {
   private api: AxiosInstance;
   private clientId: string;
   private clientSecret: string;

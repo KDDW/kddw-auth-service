@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { LoginResponse } from '../dtos/login.response';
-import { LoginUseCase } from './useCases/login.useCase';
 
 @Injectable()
-export class LoginService implements LoginUseCase {
+export class LoginService {
   constructor(private readonly configService: ConfigService) {}
 
   login(): LoginResponse {

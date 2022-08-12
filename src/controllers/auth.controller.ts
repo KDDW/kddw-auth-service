@@ -1,6 +1,16 @@
-import { Controller, Get, HttpCode, HttpStatus, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { Prisma, WhiteList } from '@prisma/client';
 import axios, { AxiosInstance } from 'axios';
+import { InsertOnWhiteListService } from 'services/insertInWhiteList.service';
 import { GetTokenFromCodeResponse } from '../dtos/getTokenFromCode.response';
 import { LoginResponse } from '../dtos/login.response';
 import { GetTokenFromCodeService } from '../services/getTokenFromCode.service';
@@ -14,6 +24,7 @@ export class AuthController {
     private readonly configService: ConfigService,
     private readonly loginService: LoginService,
     private readonly getTokenFromCodeService: GetTokenFromCodeService,
+    private readonly insertOnWhiteListService: InsertOnWhiteListService,
   ) {
     this.api = axios.create({
       baseURL: 'https://github.com',
@@ -35,5 +46,13 @@ export class AuthController {
     @Query('code') code: string,
   ): Promise<GetTokenFromCodeResponse> {
     return await this.getTokenFromCodeService.getTokenFromCode(code);
+  }
+
+  @Post('/whitelist')
+  @HttpCode(HttpStatus.CREATED)
+  async insertInWhiteList(
+    @Body() data: Prisma.WhiteListCreateInput,
+  ): Promise<WhiteList> {
+    return await this.insertOnWhiteListService.insert(data);
   }
 }
