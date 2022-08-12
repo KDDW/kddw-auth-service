@@ -1,5 +1,6 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
+import { FindEmailOnWhiteList } from 'src/repositories/findEmailOnWhiteList';
 import { AuthController } from '../controllers/auth.controller';
 import { LoginResponse } from '../dtos/login.response';
 import { GetTokenFromCodeService } from '../services/getTokenFromCode.service';
@@ -13,7 +14,7 @@ describe('AuthController', () => {
     const moduleRef = await Test.createTestingModule({
       imports: [ConfigModule.forRoot()],
       controllers: [AuthController],
-      providers: [LoginService, GetTokenFromCodeService],
+      providers: [LoginService, GetTokenFromCodeService, FindEmailOnWhiteList],
     }).compile();
 
     configService = moduleRef.get<ConfigService>(ConfigService);

@@ -11,9 +11,10 @@ datasource db {
 }
 
 model User {
-  id           Int            @id @default(autoincrement())
-  email        String         @unique
-  roles        Role[]
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  roles Role[]
+
   UserJoinRole UserJoinRole[]
 }
 
@@ -32,4 +33,13 @@ model UserJoinRole {
   roleId     Int
   assignedAt DateTime @default(now())
   assignedBy String
+}
+
+model WhiteList {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  invitedBy String
+  status    String   @default("ALLOWED")
 }
